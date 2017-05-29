@@ -4,16 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use softDeletes;
 
 class Article extends Model
 {
+	
     // protected $table = 'the_name_of_the_table';
 
     protected $fillable = [
     	'user_id', 'content', 'live', 'post_on'
     ];
 
-    protected $dates = ['post_on'];
+    protected $dates = ['post_on','deleted_at'];
 
     public function setLiveAttribute($value)
     {

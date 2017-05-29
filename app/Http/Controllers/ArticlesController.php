@@ -15,6 +15,9 @@ class ArticlesController extends Controller
         // eloquent returning json
         
         $articles = Article::paginate(10);
+        // $articles = Article::withTrashed()->paginate(10);
+
+
         // return $articles;
         return view('articles.index', compact('articles'));
      
